@@ -1,14 +1,14 @@
 version: "2"
 
 services:
-  libfranka_image:
+  libfranka_u22.04_image:
     build:
       context: .
       dockerfile: Dockerfile
       
-    image: libfranka:0.10.0
+    image: libfranka_u22.04:0.10.0
     
-    container_name: u20.04-libfranka 
+    container_name: u22.04-libfranka 
 
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix    

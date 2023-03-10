@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 ### Make installation non interactive so that docker doesnt crash during build
 ENV DEBIAN_FRONTEND noninteractive
@@ -7,9 +7,6 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update &&\
     apt-get install -y\
     build-essential \
-    clang-6.0 \
-    clang-format-6.0 \
-    clang-tidy-6.0 \
     cmake \
     doxygen \
     graphviz \
@@ -28,7 +25,7 @@ RUN apt-get update &&\
     apt-get install python3.10 -y &&\
     apt install python3-pip -y &&\
     apt install -y python3-tk &&\
-    apt install python3-gi-cairo &&\
+    apt install python3-gi-cairo -y &&\
     pip install --upgrade pip &&\
     pip install numpy==1.23.1 &&\
     pip install matplotlib==3.5.2
